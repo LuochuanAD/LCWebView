@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		441EA9BB1FFE2164005ECF9B /* LCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 441EA9B61FFE2164005ECF9B /* LCWebView.m */; };
+		441EA9BC1FFE2164005ECF9B /* WeakDelegateWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 441EA9BA1FFE2164005ECF9B /* WeakDelegateWKWebViewController.m */; };
 		441F36531FFCCD69003D8C7B /* airportSituation.html in Resources */ = {isa = PBXBuildFile; fileRef = 441F363D1FFCCD69003D8C7B /* airportSituation.html */; };
-		4433D9761FEA4EFC002D938C /* LCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4433D9751FEA4EFC002D938C /* LCWebView.m */; };
-		4433D9791FEA4FEC002D938C /* WeakDelegateWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4433D9781FEA4FEC002D938C /* WeakDelegateWKWebViewController.m */; };
 		446BB9231FFB15490018220F /* LCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BB9221FFB15490018220F /* LCWebViewController.m */; };
 		44AB268E1FE8EFAF00E6338A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB268D1FE8EFAF00E6338A /* AppDelegate.m */; };
 		44AB26911FE8EFAF00E6338A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB26901FE8EFAF00E6338A /* ViewController.m */; };
@@ -38,13 +38,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		441EA9B41FFE2164005ECF9B /* LCHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCHeader.h; sourceTree = "<group>"; };
+		441EA9B51FFE2164005ECF9B /* LCWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebView.h; sourceTree = "<group>"; };
+		441EA9B61FFE2164005ECF9B /* LCWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebView.m; sourceTree = "<group>"; };
+		441EA9B71FFE2164005ECF9B /* LCWebViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebViewDelegate.h; sourceTree = "<group>"; };
+		441EA9B81FFE2164005ECF9B /* LCWebViewWKSupplementDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebViewWKSupplementDelegate.h; sourceTree = "<group>"; };
+		441EA9B91FFE2164005ECF9B /* WeakDelegateWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakDelegateWKWebViewController.h; sourceTree = "<group>"; };
+		441EA9BA1FFE2164005ECF9B /* WeakDelegateWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakDelegateWKWebViewController.m; sourceTree = "<group>"; };
 		441F363D1FFCCD69003D8C7B /* airportSituation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = airportSituation.html; sourceTree = "<group>"; };
-		4433D9741FEA4EFC002D938C /* LCWebView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCWebView.h; sourceTree = "<group>"; };
-		4433D9751FEA4EFC002D938C /* LCWebView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebView.m; sourceTree = "<group>"; };
-		4433D9771FEA4FEC002D938C /* WeakDelegateWKWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeakDelegateWKWebViewController.h; sourceTree = "<group>"; };
-		4433D9781FEA4FEC002D938C /* WeakDelegateWKWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeakDelegateWKWebViewController.m; sourceTree = "<group>"; };
-		443CBD711FF6063C00C58493 /* LCWebViewDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCWebViewDelegate.h; sourceTree = "<group>"; };
-		443CBD721FF606FD00C58493 /* LCWebViewWKSupplementDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCWebViewWKSupplementDelegate.h; sourceTree = "<group>"; };
 		446BB9211FFB15490018220F /* LCWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCWebViewController.h; sourceTree = "<group>"; };
 		446BB9221FFB15490018220F /* LCWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewController.m; sourceTree = "<group>"; };
 		44AB26891FE8EFAF00E6338A /* LCWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,7 +63,6 @@
 		44AB26AC1FE8EFB000E6338A /* LCWebViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCWebViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AB26B01FE8EFB000E6338A /* LCWebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewUITests.m; sourceTree = "<group>"; };
 		44AB26B21FE8EFB000E6338A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44AB26C21FE90FB500E6338A /* LCHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,18 +90,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4433D9731FEA4EDE002D938C /* LCWebView */ = {
+		441EA9B31FFE2164005ECF9B /* LCWebViewTool */ = {
 			isa = PBXGroup;
 			children = (
-				4433D9741FEA4EFC002D938C /* LCWebView.h */,
-				4433D9751FEA4EFC002D938C /* LCWebView.m */,
-				443CBD711FF6063C00C58493 /* LCWebViewDelegate.h */,
-				443CBD721FF606FD00C58493 /* LCWebViewWKSupplementDelegate.h */,
-				4433D9771FEA4FEC002D938C /* WeakDelegateWKWebViewController.h */,
-				4433D9781FEA4FEC002D938C /* WeakDelegateWKWebViewController.m */,
-				44AB26C21FE90FB500E6338A /* LCHeader.h */,
+				441EA9B41FFE2164005ECF9B /* LCHeader.h */,
+				441EA9B51FFE2164005ECF9B /* LCWebView.h */,
+				441EA9B61FFE2164005ECF9B /* LCWebView.m */,
+				441EA9B71FFE2164005ECF9B /* LCWebViewDelegate.h */,
+				441EA9B81FFE2164005ECF9B /* LCWebViewWKSupplementDelegate.h */,
+				441EA9B91FFE2164005ECF9B /* WeakDelegateWKWebViewController.h */,
+				441EA9BA1FFE2164005ECF9B /* WeakDelegateWKWebViewController.m */,
 			);
-			path = LCWebView;
+			path = LCWebViewTool;
 			sourceTree = "<group>";
 		};
 		446BB92A1FFB69480018220F /* Resources */ = {
@@ -135,8 +135,8 @@
 		44AB268B1FE8EFAF00E6338A /* LCWebView */ = {
 			isa = PBXGroup;
 			children = (
+				441EA9B31FFE2164005ECF9B /* LCWebViewTool */,
 				446BB92A1FFB69480018220F /* Resources */,
-				4433D9731FEA4EDE002D938C /* LCWebView */,
 				44AB268C1FE8EFAF00E6338A /* AppDelegate.h */,
 				44AB268D1FE8EFAF00E6338A /* AppDelegate.m */,
 				44AB268F1FE8EFAF00E6338A /* ViewController.h */,
@@ -304,9 +304,9 @@
 			files = (
 				44AB26911FE8EFAF00E6338A /* ViewController.m in Sources */,
 				44AB269C1FE8EFB000E6338A /* main.m in Sources */,
-				4433D9761FEA4EFC002D938C /* LCWebView.m in Sources */,
-				4433D9791FEA4FEC002D938C /* WeakDelegateWKWebViewController.m in Sources */,
 				446BB9231FFB15490018220F /* LCWebViewController.m in Sources */,
+				441EA9BB1FFE2164005ECF9B /* LCWebView.m in Sources */,
+				441EA9BC1FFE2164005ECF9B /* WeakDelegateWKWebViewController.m in Sources */,
 				44AB268E1FE8EFAF00E6338A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = come.LuochuanAD.LCWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -482,7 +482,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = come.LuochuanAD.LCWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
