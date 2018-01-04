@@ -6,8 +6,8 @@
 //  Copyright © 2017年 luochuan. All rights reserved.
 //
 
-#ifndef Header_h
-#define Header_h
+#ifndef LCHeader_h
+#define LCHeader_h
 
 #define is_iPhoneX [UIScreen mainScreen].bounds.size.width == 375.0f && [UIScreen mainScreen].bounds.size.height == 812.0f
 #define currentVersion(obj) @available(iOS obj, *)
@@ -70,4 +70,4 @@ form.submit();\
 
 
 
-#endif /* Header_h */
+#endif /* LCHeader_h */

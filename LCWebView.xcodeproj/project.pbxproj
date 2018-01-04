@@ -62,7 +62,7 @@
 		44AB26AC1FE8EFB000E6338A /* LCWebViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCWebViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AB26B01FE8EFB000E6338A /* LCWebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewUITests.m; sourceTree = "<group>"; };
 		44AB26B21FE8EFB000E6338A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		44AB26C21FE90FB500E6338A /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		44AB26C21FE90FB500E6338A /* LCHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,7 @@
 				443CBD721FF606FD00C58493 /* LCWebViewWKSupplementDelegate.h */,
 				4433D9771FEA4FEC002D938C /* WeakDelegateWKWebViewController.h */,
 				4433D9781FEA4FEC002D938C /* WeakDelegateWKWebViewController.m */,
-				44AB26C21FE90FB500E6338A /* Header.h */,
+				44AB26C21FE90FB500E6338A /* LCHeader.h */,
 			);
 			path = LCWebView;
 			sourceTree = "<group>";

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Header.h"
+#import "LCHeader.h"
 #import <WebKit/WebKit.h>
 #import "LCWebViewDelegate.h"
 #import "LCWebViewWKSupplementDelegate.h"
