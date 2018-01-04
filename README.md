@@ -327,7 +327,7 @@
 - (void)LC_jsCallWebViewReceiveString:(NSString *)string;
 ``` 
 注:所有的js调用Native的弹框.都通过该方法来处理.
-例如如下前端代码,通过传递给Native端的字符串来进行弹框显示,具体可以看[Demo](https://github.com/LuochuanAD/LCWebView "Demo"):
+例如如下前端代码,通过传递给Native端的字符串来进行弹框显示,具体可以看Demo:
 ``` python
 <input type="button" value="js传参给Native" onclick="callFunc()">
 <script type="text/javascript">
@@ -354,7 +354,7 @@
 ``` python
 - (nullable WKNavigation *)LC_loadRequest:(NSURLRequest*)request;
 ```
-(5) LCWebView 提供加载网页进度.可以通过KVO来获取,详情看[Demo](https://github.com/LuochuanAD/LCWebView "https://github.com/LuochuanAD/LCWebView"). 
+(5) LCWebView 提供加载网页进度.可以通过KVO来获取,详情看Demo. 
 
 (6)LCWebView 在iOS8的系统上,内部使用的是WKWebView. WKWebView加载本地的css,js出现的样式显示不出来等问题.这是系统本身的bug. 我暂时无法解决.   LCWebView不推荐加载带有本地css,js文件的html.   单纯的加载一个html从iOS7开始是支持的.
 
