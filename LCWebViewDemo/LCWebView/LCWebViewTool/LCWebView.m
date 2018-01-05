@@ -66,7 +66,7 @@
         // 不通过用户交互，是否可以打开窗口
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = NO;
         
-        //此处自定义默认配置
+      
     }
     WeakDelegateWKWebViewController *delegateController=[[WeakDelegateWKWebViewController alloc]init];
     delegateController.delegate=self;
