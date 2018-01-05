@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-			无描述信息
+			LCWebView iOS7andlaster.无描述信息
                    DESC
 
   s.homepage     = "https://github.com/LuochuanAD"
@@ -89,8 +89,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "LCWebView", "LCWebView/**/*.{h,m}"
-  s.exclude_files = "LCWebView/Exclude"
+  s.source_files  = "LCWebView", "LCWebView/*.{h,m}"
+  # s.exclude_files = "LCWebView/Exclude"
 
   # s.public_header_files = "LCWebView/**/*.h"
 
