@@ -6,7 +6,7 @@
 //  Copyright © 2017年 luochuan. All rights reserved.
 //
 
-//#import <UIKit/UIKit.h>
+#import <UIKit/UIKit.h>
 #import "LCHeader.h"
 #import <WebKit/WebKit.h>
 #import "LCWebViewDelegate.h"

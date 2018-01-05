@@ -74,6 +74,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  @param elementInfo 预览元素信息(url)
  *
  */
+
 - (BOOL)LC_webView:(LCWebView *)webView shouldPreviewElement:(WKPreviewElementInfo *)elementInfo API_AVAILABLE(macosx(10.12), ios(10.0));
 /**
  *  自定义预览视图(WKWebView代理方法)
@@ -84,6 +85,7 @@ NS_ASSUME_NONNULL_BEGIN
  *
  */
 - (nullable UIViewController *)LC_webView:(LCWebView *)webView previewingViewControllerForElement:(WKPreviewElementInfo *)elementInfo defaultActions:(NSArray<id <WKPreviewActionItem>> *)previewActions API_AVAILABLE(macosx(10.12), ios(10.0));
+
 /**
  *  提交预览视图(WKWebView代理方法)
  *
