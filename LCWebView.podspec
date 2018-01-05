@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
 			无描述信息
                    DESC
 
-  s.homepage     = "https://github.com/LuochuanAD/LCWebView"
+  s.homepage     = "https://github.com/LuochuanAD"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -89,7 +89,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "LCWebView", "LCWebView/LCWebView/*.{h,m}"
+  s.source_files  = "LCWebView", "LCWebView/**/*.{h,m}"
   s.exclude_files = "LCWebView/Exclude"
 
   # s.public_header_files = "LCWebView/**/*.h"
