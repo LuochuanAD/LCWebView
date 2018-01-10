@@ -1,10 +1,13 @@
 ***
 
-***使用***
+***使用*** pod 'LCWebViewTool', '~> 1.0.0'
 
 ***
+***
 
-pod 'LCWebViewTool', '~> 1.0.0'
+***License*** LCWebViewTool is released under the MIT license. See [LICENSE](https://github.com/LuochuanAD/HybirdWKWebVIew "https://github.com/LuochuanAD/HybirdWKWebVIew") for details.
+
+***
 
 ***
 
