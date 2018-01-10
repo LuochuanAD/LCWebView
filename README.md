@@ -5,7 +5,7 @@
 ***
 ***
 
-***License*** LCWebViewTool is released under the MIT license. See [LICENSE](https://github.com/LuochuanAD/HybirdWKWebVIew "https://github.com/LuochuanAD/HybirdWKWebVIew") for details.
+***License*** LCWebViewTool is released under the MIT license. See [LICENSE](https://github.com/LuochuanAD/LCWebView/blob/master/LICENSE "https://github.com/LuochuanAD/LCWebView/blob/master/LICENSE") for details.
 
 ***
 
