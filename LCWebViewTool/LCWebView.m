@@ -60,7 +60,7 @@
         configuration.allowsInlineMediaPlayback = YES;
         configuration.preferences = [WKPreferences new];
         // The minimum font size in points default is 0;
-        configuration.preferences.minimumFontSize = 40;
+        configuration.preferences.minimumFontSize = 0;
         // 是否支持 JavaScript
         configuration.preferences.javaScriptEnabled = YES;
         // 不通过用户交互，是否可以打开窗口
@@ -476,7 +476,7 @@
         if ([[UIApplication sharedApplication] canOpenURL:url])
         {
             if (@available(iOS 10.0, *)) {
-                NSDictionary *options=@{UIApplicationOpenURLOptionUniversalLinksOnly:@YES};
+                NSDictionary *options=@{UIApplicationOpenSettingsURLString:@YES};
                 [[UIApplication sharedApplication] openURL:url options:options completionHandler:nil];
             } else {
                 [[UIApplication sharedApplication] openURL:url];
@@ -488,6 +488,9 @@
     
     if (result) {
         readWriteRequest=navigationAction.request;
+        if (navigationAction.targetFrame == nil) {
+            [self LC_loadRequest:readWriteRequest];
+        }
         decisionHandler(WKNavigationActionPolicyAllow);
     }else{
         decisionHandler(WKNavigationActionPolicyCancel);
