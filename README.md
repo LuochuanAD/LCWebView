@@ -1,3 +1,5 @@
+![image](https://github.com/LuochuanAD/LCWebView/blob/master/LCWebViewDemo/LCWebView/demo.gif)
+
 ***
 
 ***使用*** pod 'LCWebViewTool', '~> 1.0.0'
