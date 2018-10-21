@@ -362,14 +362,12 @@
 ```
 (5) LCWebView 提供加载网页进度.可以通过KVO来获取,详情看Demo. 
 
-(6)LCWebView 在iOS8的系统上,内部使用的是WKWebView. WKWebView加载本地的css,js出现的样式显示不出来等问题.这是系统本身的bug. 我暂时无法解决.   LCWebView不推荐加载带有本地css,js文件的html.   单纯的加载一个html从iOS7开始是支持的.
-
-(7) LCWebView 关于https加载自签名证书的解决方法:
+(6) LCWebView 关于https加载自签名证书的解决方法:
 UIWebView的https 自签名证书解决方法: [http://blog.csdn.net/luochuanad/article/details/53410537](http://blog.csdn.net/luochuanad/article/details/53410537 "http://blog.csdn.net/luochuanad/article/details/53410537")
 
 WKWebView的https 自签名证书的解决方法:
 [https://github.com/LuochuanAD/HybirdWKWebVIew](https://github.com/LuochuanAD/HybirdWKWebVIew "https://github.com/LuochuanAD/HybirdWKWebVIew")
 
-(8)LCWebView 关于cookie的问题:
+(7)LCWebView 关于cookie的问题:
 [https://www.jianshu.com/p/85f24794bbea](https://www.jianshu.com/p/85f24794bbea "https://www.jianshu.com/p/85f24794bbea")
 
