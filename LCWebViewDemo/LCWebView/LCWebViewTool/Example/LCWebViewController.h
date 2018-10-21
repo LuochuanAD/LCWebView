@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LCWebViewController : UIViewController
-- (void)loadRequest:(NSURLRequest *)request;
+- (void)loadRequest:(NSURLRequest *)request;//加载网页
 
 - (void)loadHTMLString:(NSString *)string baseURL:(NSURL *)baseURL;
 

@@ -8,52 +8,64 @@
 
 #import "LCWebViewController.h"
 #import "LCWebView.h"
-
+#define iPhoneXSeries (([[UIApplication sharedApplication] statusBarFrame].size.height == 44.0f) ? (YES):(NO))
 @interface LCWebViewController ()<LCWebViewDelegate,LCWebViewWKSupplementDelegate>
 @property (nonatomic, strong) LCWebView * webView;
+@property (nonatomic, strong) UIProgressView * progressView;
 @end
 
 @implementation LCWebViewController
 - (void)dealloc{
     [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
 }
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        [self setUpWebView];
-    }
-    return self;
-}
+
 - (void)loadRequest:(NSURLRequest *)request{
+    [self setUpWebView];
     [self.webView LC_loadRequest:request];
 }
 - (void)loadHTMLString:(NSString *)string baseURL:(nullable NSURL *)baseURL{
+    [self setUpWebView];
     [self.webView LC_loadHTMLString:string baseURL:baseURL];
 }
 - (void)loadHTMLFileName:(NSString *)htmlName{
+    [self setUpWebView];
     [self.webView LC_loadHTMLFileName:htmlName];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self.navigationController.navigationBar addSubview:self.progressView];
+    
+    
+    [self.view addSubview:_webView];
     
 }
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
     if ([keyPath isEqualToString:@"estimatedProgress"]){
         NSString *str=change[NSKeyValueChangeNewKey];
         NSLog(@"=======进度条=======%@",str);
+        //self.progressView.progress = str.floatValue;
+        [self.progressView setProgress:str.floatValue animated:YES];
+        if (str.floatValue>=1.0) {
+            self.progressView.hidden=YES;
+        }
     }
 }
 
 - (void)setUpWebView{
     if (!_webView) {
-        _webView=[[LCWebView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) withWKWebViewConfiguration:nil];//configuration若为nil,则会默认设置,前往查看LCWebView.m
+        _webView=[[LCWebView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height) withWKWebViewConfiguration:nil];//configuration若为nil,则会默认设置,前往查看LCWebView.m
         _webView.webDelegate=self;
         _webView.supplementDelegate=self;
         _webView.backgroundColor=[UIColor whiteColor];
         _webView.scalesPageToFit=YES;
         [_webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
-        [self.view addSubview:_webView];
+    }
+    if (!_progressView) {
+        _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0,44, [UIScreen mainScreen].bounds.size.width, 1)];
+        _progressView.progressViewStyle = UIProgressViewStyleDefault;
+        _progressView.tintColor = [UIColor greenColor];
+        _progressView.trackTintColor = [UIColor lightGrayColor];
+        _progressView.hidden=NO;
     }
 }
 - (void)viewWillAppear:(BOOL)animated{
@@ -72,10 +84,11 @@
 }
 #pragma mark -----基本用法----LCWebViewDelegate------------
 - (BOOL)LC_webView:(LCWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(LCWebViewNavigationType)navigationType{
-    if (navigationType==LCWebViewNavigationTypeFormSubmitted) {//例如,提交表单,NO
-        return NO;
-    }
-    
+    /**例如,提交表单,NO
+     if (navigationType==LCWebViewNavigationTypeFormSubmitted) {
+     return NO;
+     }
+     */
     return YES;
 }
 
@@ -150,9 +163,13 @@
 
 - (BOOL)LC_webView:(LCWebView *)webView decidePolicyForNavigationResponse:(NSURLResponse *)response IsForMainFrame:(BOOL)mainFrame{
     NSLog(@"收到服务器响应决定是否跳转");
-    if (mainFrame==NO) {//例如;不是主框架 No
-        return NO;
-    }
+    /**
+     //例如;不是主框架 No
+     if (mainFrame==NO) {
+     return NO;
+     }
+     */
+    
     return YES;
 }
 
@@ -162,11 +179,13 @@
 - (void)LC_webView:(LCWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
     NSLog(@"当内容开始返回时调用");
 }
+/** 此方法 可以不用写,因为在 LCWebView.m:490 中已做设置
 - (nullable LCWebView *)LC_webView:(LCWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures{
     NSLog(@"打开新窗口");
+    
     return nil;
 }
-
+*/
 - (void)LC_webView:(LCWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
     NSLog(@"权限认证. 注意测试iOS8系统,自签证书的验证是否可以");
     completionHandler(NSURLSessionAuthChallengePerformDefaultHandling,nil);

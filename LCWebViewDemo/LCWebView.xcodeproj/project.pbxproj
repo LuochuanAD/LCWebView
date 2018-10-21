@@ -10,7 +10,6 @@
 		4416C2011FFF235100793503 /* LCWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416C1FC1FFF235000793503 /* LCWebView.m */; };
 		4416C2021FFF235100793503 /* WeakDelegateWKWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4416C2001FFF235000793503 /* WeakDelegateWKWebViewController.m */; };
 		441F36531FFCCD69003D8C7B /* airportSituation.html in Resources */ = {isa = PBXBuildFile; fileRef = 441F363D1FFCCD69003D8C7B /* airportSituation.html */; };
-		446BB9231FFB15490018220F /* LCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 446BB9221FFB15490018220F /* LCWebViewController.m */; };
 		44AB268E1FE8EFAF00E6338A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB268D1FE8EFAF00E6338A /* AppDelegate.m */; };
 		44AB26911FE8EFAF00E6338A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB26901FE8EFAF00E6338A /* ViewController.m */; };
 		44AB26961FE8EFAF00E6338A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 44AB26951FE8EFAF00E6338A /* Assets.xcassets */; };
@@ -18,6 +17,8 @@
 		44AB269C1FE8EFB000E6338A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB269B1FE8EFB000E6338A /* main.m */; };
 		44AB26A61FE8EFB000E6338A /* LCWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB26A51FE8EFB000E6338A /* LCWebViewTests.m */; };
 		44AB26B11FE8EFB000E6338A /* LCWebViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB26B01FE8EFB000E6338A /* LCWebViewUITests.m */; };
+		80D2186C217C0EB200FB59BE /* LCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2186A217C0EB200FB59BE /* LCWebViewController.m */; };
+		80D2186E217C1CF500FB59BE /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 80D2186D217C1CF400FB59BE /* demo.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,6 @@
 		4416C1FF1FFF235000793503 /* WeakDelegateWKWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakDelegateWKWebViewController.h; sourceTree = "<group>"; };
 		4416C2001FFF235000793503 /* WeakDelegateWKWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakDelegateWKWebViewController.m; sourceTree = "<group>"; };
 		441F363D1FFCCD69003D8C7B /* airportSituation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = airportSituation.html; sourceTree = "<group>"; };
-		446BB9211FFB15490018220F /* LCWebViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LCWebViewController.h; sourceTree = "<group>"; };
-		446BB9221FFB15490018220F /* LCWebViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewController.m; sourceTree = "<group>"; };
 		44AB26891FE8EFAF00E6338A /* LCWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LCWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AB268C1FE8EFAF00E6338A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		44AB268D1FE8EFAF00E6338A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -63,6 +62,9 @@
 		44AB26AC1FE8EFB000E6338A /* LCWebViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCWebViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AB26B01FE8EFB000E6338A /* LCWebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewUITests.m; sourceTree = "<group>"; };
 		44AB26B21FE8EFB000E6338A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80D2186A217C0EB200FB59BE /* LCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebViewController.m; sourceTree = "<group>"; };
+		80D2186B217C0EB200FB59BE /* LCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebViewController.h; sourceTree = "<group>"; };
+		80D2186D217C1CF400FB59BE /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		4416C1F91FFF235000793503 /* LCWebViewTool */ = {
 			isa = PBXGroup;
 			children = (
+				80D21869217C0EB200FB59BE /* Example */,
 				4416C1FA1FFF235000793503 /* LCHeader.h */,
 				4416C1FB1FFF235000793503 /* LCWebView.h */,
 				4416C1FC1FFF235000793503 /* LCWebView.m */,
@@ -141,8 +144,7 @@
 				44AB268D1FE8EFAF00E6338A /* AppDelegate.m */,
 				44AB268F1FE8EFAF00E6338A /* ViewController.h */,
 				44AB26901FE8EFAF00E6338A /* ViewController.m */,
-				446BB9211FFB15490018220F /* LCWebViewController.h */,
-				446BB9221FFB15490018220F /* LCWebViewController.m */,
+				80D2186D217C1CF400FB59BE /* demo.gif */,
 				44AB26951FE8EFAF00E6338A /* Assets.xcassets */,
 				44AB26971FE8EFAF00E6338A /* LaunchScreen.storyboard */,
 				44AB269A1FE8EFB000E6338A /* Info.plist */,
@@ -167,6 +169,15 @@
 				44AB26B21FE8EFB000E6338A /* Info.plist */,
 			);
 			path = LCWebViewUITests;
+			sourceTree = "<group>";
+		};
+		80D21869217C0EB200FB59BE /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				80D2186B217C0EB200FB59BE /* LCWebViewController.h */,
+				80D2186A217C0EB200FB59BE /* LCWebViewController.m */,
+			);
+			path = Example;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44AB26991FE8EFAF00E6338A /* LaunchScreen.storyboard in Resources */,
+				80D2186E217C1CF500FB59BE /* demo.gif in Resources */,
 				44AB26961FE8EFAF00E6338A /* Assets.xcassets in Resources */,
 				441F36531FFCCD69003D8C7B /* airportSituation.html in Resources */,
 			);
@@ -304,9 +316,9 @@
 			files = (
 				44AB26911FE8EFAF00E6338A /* ViewController.m in Sources */,
 				44AB269C1FE8EFB000E6338A /* main.m in Sources */,
-				446BB9231FFB15490018220F /* LCWebViewController.m in Sources */,
 				4416C2011FFF235100793503 /* LCWebView.m in Sources */,
 				4416C2021FFF235100793503 /* WeakDelegateWKWebViewController.m in Sources */,
+				80D2186C217C0EB200FB59BE /* LCWebViewController.m in Sources */,
 				44AB268E1FE8EFAF00E6338A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
