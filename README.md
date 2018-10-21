@@ -1,12 +1,5 @@
 ![image](https://github.com/LuochuanAD/LCWebView/blob/master/LCWebViewDemo/LCWebView/demo.gif)
 
-***
-
-***使用*** pod 'LCWebViewTool', '~> 1.0.0'
-
-***
-***
-
 ***License*** LCWebViewTool is released under the MIT license. See [LICENSE](https://github.com/LuochuanAD/LCWebView/blob/master/LICENSE "https://github.com/LuochuanAD/LCWebView/blob/master/LICENSE") for details.
 
 ***
