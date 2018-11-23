@@ -187,8 +187,14 @@
 }
 */
 - (void)LC_webView:(LCWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
-    NSLog(@"权限认证. 注意测试iOS8系统,自签证书的验证是否可以");
-    completionHandler(NSURLSessionAuthChallengePerformDefaultHandling,nil);
+    //NSLog(@"权限认证. 注意测试iOS8系统,自签证书的验证是否可以");
+    //completionHandler(NSURLSessionAuthChallengePerformDefaultHandling,nil);
+    
+    //忽略不受信任的证书
+    NSURLCredential *credential = [[NSURLCredential alloc]initWithTrust:challenge.protectionSpace.serverTrust];
+    
+    completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+    
 }
 - (void)LC_webViewDidClose:(LCWebView *)webView API_AVAILABLE(macosx(10.11), ios(9.0)){
     NSLog(@"WKwebView关闭");
