@@ -34,8 +34,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.navigationController.navigationBar addSubview:self.progressView];
-    
-    
     [self.view addSubview:_webView];
     
 }
@@ -68,19 +66,10 @@
         _progressView.hidden=NO;
     }
 }
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-    if (_webView.title==nil) {
-        [_webView LC_reload];
-    }
-}
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    
-    if (_webView.title!=nil) {
-        self.navigationItem.title=_webView.title;
-    }
-    
+
+- (void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.progressView.hidden=YES;
 }
 #pragma mark -----基本用法----LCWebViewDelegate------------
 - (BOOL)LC_webView:(LCWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(LCWebViewNavigationType)navigationType{
@@ -91,18 +80,27 @@
      */
     return YES;
 }
-
+/*
+ *  开始加载
+ */
 - (void)LC_webViewDidStartLoad:(LCWebView *)webView{
     NSLog(@"开始加载");
-    
 }
+/*
+ * 加载结束
+ */
 - (void)LC_webViewDidFinishLoad:(LCWebView *)webView{
     NSLog(@"加载结束");
-    self.navigationItem.title=_webView.title;
 }
+/*
+ * 加载失败
+ */
 - (void)LC_webView:(LCWebView *)webView didFailLoadWithError:(NSError *)error{
-    NSLog(@"加载失败%@",error);
+    NSLog(@"加载失败%@",error.localizedDescription);
 }
+/*
+ *  js传递OC的字符串
+ */
 - (void)LC_jsCallWebViewReceiveString:(NSString *)string{
     NSLog(@"---js传递OC的字符串------%@",string);
     NSMutableDictionary *param = [self queryStringToDictionary:string];
@@ -156,26 +154,29 @@
     
     
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
+
 #pragma mark -----更好的用户体验用法----LCWebViewWKSupplementDelegate------------
 
+/*
+ *  收到服务器响应决定是否跳转
+ *  Example:
+ *  if (mainFrame==NO) {
+ *  return NO;
+ *  }
+ */
 - (BOOL)LC_webView:(LCWebView *)webView decidePolicyForNavigationResponse:(NSURLResponse *)response IsForMainFrame:(BOOL)mainFrame{
     NSLog(@"收到服务器响应决定是否跳转");
-    /**
-     //例如;不是主框架 No
-     if (mainFrame==NO) {
-     return NO;
-     }
-     */
-    
     return YES;
 }
-
+/*
+ *  接收服务器跳转请求之后调用
+ */
 -(void)LC_webView:(LCWebView *)webView didReceiveServerRedirectForProvisionalNavigation:(null_unspecified WKNavigation *)navigation{
     NSLog(@"接收服务器跳转请求之后调用");
 }
+/*
+ *  当内容开始返回时调用
+ */
 - (void)LC_webView:(LCWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
     NSLog(@"当内容开始返回时调用");
 }
@@ -186,6 +187,9 @@
     return nil;
 }
 */
+/*
+ *  证书验证
+ */
 - (void)LC_webView:(LCWebView *)webView didReceiveAuthenticationChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler{
     //NSLog(@"权限认证. 注意测试iOS8系统,自签证书的验证是否可以");
     //completionHandler(NSURLSessionAuthChallengePerformDefaultHandling,nil);
@@ -196,24 +200,38 @@
     completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
     
 }
+/*
+ *  WKwebView关闭
+ */
 - (void)LC_webViewDidClose:(LCWebView *)webView API_AVAILABLE(macosx(10.11), ios(9.0)){
     NSLog(@"WKwebView关闭");
 }
-
+/*
+ *  进程终止
+ */
 - (void)LC_webViewWebContentProcessDidTerminate:(LCWebView *)webView API_AVAILABLE(macosx(10.11), ios(9.0));
 {
 //    首先 在此处刷新[webView reload]高内存消耗,解决白屏; 其次,在viewWillAppear中检测到webview.title为空,则reload webview.
     NSLog(@"进程终止");
     [_webView LC_reload];
 }
+/*
+ *  是否预览
+ */
 - (BOOL)LC_webView:(LCWebView *)webView shouldPreviewElement:(WKPreviewElementInfo *)elementInfo API_AVAILABLE(macosx(10.12), ios(10.0)){
     NSLog(@"是否预览");
     return NO;
 }
+/*
+ *  自定义预览视图
+ */
 - (nullable UIViewController *)LC_webView:(LCWebView *)webView previewingViewControllerForElement:(WKPreviewElementInfo *)elementInfo defaultActions:(NSArray<id <WKPreviewActionItem>> *)previewActions API_AVAILABLE(macosx(10.12), ios(10.0)){
     NSLog(@"自定义预览视图");
     return nil;
 }
+/*
+ *  提交预览视图
+ */
 - (void)LC_webView:(LCWebView *)webView commitPreviewingViewController:(UIViewController *)previewingViewController API_AVAILABLE(macosx(10.12), ios(10.0)){
     NSLog(@"提交预览视图");
 }

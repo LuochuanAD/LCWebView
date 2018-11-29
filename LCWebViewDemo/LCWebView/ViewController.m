@@ -56,7 +56,7 @@
         NSString *headStr = @"<head><style>img{width:100% !important}</style></head>";
         
         NSString *image1 = [NSString stringWithFormat:@"<div style=\"margin: -8px -8px;\"><img src='%@'/></div>",@"http://d.ifengimg.com/mw978_mh598/p0.ifengimg.com/pmop/2018/0101/F9D4C07373C0D9B013D71C834D420D6B9FC282AE_size100_w899_h627.jpeg"];
-        NSString *contentStr = @"此处为文字,啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦了";
+        NSString *contentStr = @"此处为文字,你可以写任何东西在此处";
         NSString *htmlURlStr = [NSString stringWithFormat:@"%@<body style='background-color:#ffffff'>%@<br><div style=\"margin: 15pt 15pt;\">%@</div></body>", headStr, image1, contentStr];
         LCWebViewController *webVC=[[LCWebViewController alloc]init];
         [webVC loadHTMLString:htmlURlStr baseURL:nil];
