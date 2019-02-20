@@ -180,13 +180,16 @@
 - (void)LC_webView:(LCWebView *)webView didCommitNavigation:(null_unspecified WKNavigation *)navigation {
     NSLog(@"当内容开始返回时调用");
 }
-/** 此方法 可以不用写,因为在 LCWebView.m:490 中已做设置
+/** 此方法 解决多窗口问题 (例如 js中使用windows.open方法打开一个新窗口)
+*/
 - (nullable LCWebView *)LC_webView:(LCWebView *)webView createWebViewWithConfiguration:(WKWebViewConfiguration *)configuration forNavigationAction:(WKNavigationAction *)navigationAction windowFeatures:(WKWindowFeatures *)windowFeatures{
     NSLog(@"打开新窗口");
-    
+    if(navigationAction.targetFrame == nil || !navigationAction.targetFrame.isMainFrame)
+    {
+        [self loadRequest:navigationAction.request];
+    }
     return nil;
 }
-*/
 /*
  *  证书验证
  */

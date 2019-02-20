@@ -488,6 +488,10 @@
     
     if (result) {
         readWriteRequest=navigationAction.request;
+        
+        if (!navigationAction.targetFrame.isMainFrame) {//解决target:_blank标签问题
+            [webView evaluateJavaScript:@"var a = document.getElementsByTagName('a');for(var i=0;i<a.length;i++){a[i].setAttribute('target','');}" completionHandler:nil];
+        }
         if (navigationAction.targetFrame == nil) {
             [self LC_loadRequest:readWriteRequest];
         }
