@@ -156,9 +156,10 @@
 }
 - (NSURL *)URL{
     if (hasWKWebView) {
-        return [(UIWebView *)self.realWebView request].URL;
-    }else{
         return [(WKWebView *)self.realWebView URL];
+    }else{
+        
+        return [(UIWebView *)self.realWebView request].URL;
     }
 }
 

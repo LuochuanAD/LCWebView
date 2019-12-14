@@ -197,10 +197,57 @@
     //NSLog(@"权限认证. 注意测试iOS8系统,自签证书的验证是否可以");
     //completionHandler(NSURLSessionAuthChallengePerformDefaultHandling,nil);
     
-    //忽略不受信任的证书
-    NSURLCredential *credential = [[NSURLCredential alloc]initWithTrust:challenge.protectionSpace.serverTrust];
+    NSString *hostName = webView.URL.host;
     
-    completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
+    NSString *authenticationMethod = [[challenge protectionSpace] authenticationMethod];
+    if ([authenticationMethod isEqualToString:NSURLAuthenticationMethodDefault]
+        || [authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPBasic]
+        || [authenticationMethod isEqualToString:NSURLAuthenticationMethodHTTPDigest]) {
+        
+        NSString *title = @"Authentication Challenge";
+        NSString *message = [NSString stringWithFormat:@"%@ requires user name and password", hostName];
+        UIAlertController *alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"User";
+            //textField.secureTextEntry = YES;
+        }];
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"Password";
+            textField.secureTextEntry = YES;
+        }];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            NSString *userName = ((UITextField *)alertController.textFields[0]).text;
+            NSString *password = ((UITextField *)alertController.textFields[1]).text;
+            
+            NSURLCredential *credential = [[NSURLCredential alloc] initWithUser:userName password:password persistence:NSURLCredentialPersistenceNone];
+            
+            completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
+            
+        }]];
+        [alertController addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+        }]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self presentViewController:alertController animated:YES completion:^{}];
+        });
+        
+    }
+    else if ([authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
+        // needs this handling on iOS 9
+        completionHandler(NSURLSessionAuthChallengePerformDefaultHandling, nil);
+        // or, see also http://qiita.com/niwatako/items/9ae602cb173625b4530a#%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB%E3%82%B3%E3%83%BC%E3%83%89
+    }
+    else {
+        completionHandler(NSURLSessionAuthChallengeCancelAuthenticationChallenge, nil);
+    }
+    
+    
+    
+//    //忽略不受信任的证书
+//    NSURLCredential *credential = [[NSURLCredential alloc]initWithTrust:challenge.protectionSpace.serverTrust];
+//
+//    completionHandler(NSURLSessionAuthChallengeUseCredential,credential);
     
 }
 /*
