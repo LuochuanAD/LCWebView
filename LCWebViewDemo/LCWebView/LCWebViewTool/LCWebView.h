@@ -83,7 +83,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 #pragma mark ---------为了更好的用户体验 WKWebView 补充属性和方法(仅支持iOS8及以上,可不做任何设置)-----------------
-#if WK_API_ENABLED
+
 /**
  *  网站列表,历史记录,可以通过前进和后退 (仅设置WKWebView)
  */
@@ -125,7 +125,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)takeSnapshotWithConfiguration:(nullable WKSnapshotConfiguration *)snapshotConfiguration completionHandler:(void (^)(UIImage * _Nullable snapshotImage, NSError * _Nullable error))completionHandler API_AVAILABLE(ios(11.0));
 + (BOOL)handlesURLScheme:(NSString *)urlScheme API_AVAILABLE(macosx(10.13), ios(11.0));
  */
-#endif
+
 #pragma mark ---------为了更好的用户体验 UIWebVieW 各属性配置(仅支持iOS7,可不做任何设置)-----------------
 
 /**

@@ -6,7 +6,7 @@
 //  Copyright © 2017年 luochuan. All rights reserved.
 //
 #import <WebKit/WKFoundation.h>
-#if WK_API_ENABLED
+
 #import <Foundation/Foundation.h>
 #import <WebKit/WKPreviewActionItem.h>
 NS_ASSUME_NONNULL_BEGIN
@@ -95,5 +95,5 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)LC_webView:(LCWebView *)webView commitPreviewingViewController:(UIViewController *)previewingViewController API_AVAILABLE(macosx(10.12), ios(10.0));
 
 @end
+
 NS_ASSUME_NONNULL_END
-#endif
