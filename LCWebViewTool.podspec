@@ -25,10 +25,10 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-			LCWebViewTool.iOS7 andLaster, it's easy to use
+			LCWebViewTool.iOS7 andLaster
                    DESC
 
-  s.homepage     = "https://github.com/LuochuanAD"
+  s.homepage     = "https://strictfrog.com"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
