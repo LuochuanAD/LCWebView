@@ -17,6 +17,7 @@
 		44AB269C1FE8EFB000E6338A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB269B1FE8EFB000E6338A /* main.m */; };
 		44AB26A61FE8EFB000E6338A /* LCWebViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB26A51FE8EFB000E6338A /* LCWebViewTests.m */; };
 		44AB26B11FE8EFB000E6338A /* LCWebViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 44AB26B01FE8EFB000E6338A /* LCWebViewUITests.m */; };
+		80333B0423A66D6700D7EFBE /* pod.png in Resources */ = {isa = PBXBuildFile; fileRef = 80333B0323A66D6700D7EFBE /* pod.png */; };
 		80D2186C217C0EB200FB59BE /* LCWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 80D2186A217C0EB200FB59BE /* LCWebViewController.m */; };
 		80D2186E217C1CF500FB59BE /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 80D2186D217C1CF400FB59BE /* demo.gif */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		44AB26AC1FE8EFB000E6338A /* LCWebViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LCWebViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		44AB26B01FE8EFB000E6338A /* LCWebViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LCWebViewUITests.m; sourceTree = "<group>"; };
 		44AB26B21FE8EFB000E6338A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80333B0323A66D6700D7EFBE /* pod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pod.png; sourceTree = "<group>"; };
 		80D2186A217C0EB200FB59BE /* LCWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LCWebViewController.m; sourceTree = "<group>"; };
 		80D2186B217C0EB200FB59BE /* LCWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LCWebViewController.h; sourceTree = "<group>"; };
 		80D2186D217C1CF400FB59BE /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				44AB268F1FE8EFAF00E6338A /* ViewController.h */,
 				44AB26901FE8EFAF00E6338A /* ViewController.m */,
 				80D2186D217C1CF400FB59BE /* demo.gif */,
+				80333B0323A66D6700D7EFBE /* pod.png */,
 				44AB26951FE8EFAF00E6338A /* Assets.xcassets */,
 				44AB26971FE8EFAF00E6338A /* LaunchScreen.storyboard */,
 				44AB269A1FE8EFB000E6338A /* Info.plist */,
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44AB26991FE8EFAF00E6338A /* LaunchScreen.storyboard in Resources */,
+				80333B0423A66D6700D7EFBE /* pod.png in Resources */,
 				80D2186E217C1CF500FB59BE /* demo.gif in Resources */,
 				44AB26961FE8EFAF00E6338A /* Assets.xcassets in Resources */,
 				441F36531FFCCD69003D8C7B /* airportSituation.html in Resources */,
