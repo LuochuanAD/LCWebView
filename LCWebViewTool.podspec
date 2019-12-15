@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "LCWebViewTool"
-  s.version      = "1.0.0"
+  s.version      = "2.0.0"
   s.summary      = "LCWebViewTool.iOS7 andLaster, it's easy to use"
 
   # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-			LCWebViewTool.iOS7 andLaster, it's easy to use无描述信息
+			LCWebViewTool.iOS7 andLaster, it's easy to use
                    DESC
 
   s.homepage     = "https://github.com/LuochuanAD"
@@ -87,8 +87,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "LCWebViewTool", "LCWebViewTool/**/*.{h,m}"
-  s.exclude_files = "LCWebViewTool/Exclude"
+  s.source_files  = "LCWebViewTool", "LCWebViewTool/*.{h,m}"
+  
 
   # s.public_header_files = "LCWebViewTool/**/*.h"
 
@@ -113,7 +113,7 @@ Pod::Spec.new do |s|
   #  the lib prefix of their name.
   #
 
-  s.framework  = "UIKit"
+  #s.framework  = "UIKit"
   # s.frameworks = "SomeFramework", "AnotherFramework"
 
   # s.library   = "iconv"
