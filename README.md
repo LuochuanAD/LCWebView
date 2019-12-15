@@ -4,6 +4,9 @@
 
 ***
 
+
+
+
 ***
 
 ***一,说明***
@@ -13,6 +16,10 @@
 ``` python
 
 ```
+***cocoapods支持***
+![image](https://raw.githubusercontent.com/LuochuanAD/LCWebView/master/LCWebViewDemo/LCWebView/pod.png)
+
+
 ***
 ***二,LCWebViewDelegate (此代理所有方法均为WKWebView和UIWebView共同拥有的协议,支持iOS7及以上)***
 
