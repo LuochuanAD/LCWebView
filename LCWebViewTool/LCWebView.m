@@ -66,7 +66,7 @@
         // 不通过用户交互，是否可以打开窗口
         configuration.preferences.javaScriptCanOpenWindowsAutomatically = NO;
         
-        
+      
     }
     WeakDelegateWKWebViewController *delegateController=[[WeakDelegateWKWebViewController alloc]init];
     delegateController.delegate=self;
@@ -156,9 +156,10 @@
 }
 - (NSURL *)URL{
     if (hasWKWebView) {
-        return [(UIWebView *)self.realWebView request].URL;
-    }else{
         return [(WKWebView *)self.realWebView URL];
+    }else{
+        
+        return [(UIWebView *)self.realWebView request].URL;
     }
 }
 
@@ -488,9 +489,14 @@
     
     if (result) {
         readWriteRequest=navigationAction.request;
+        
+        if (!navigationAction.targetFrame.isMainFrame) {//解决target:_blank标签问题
+            [webView evaluateJavaScript:@"var a = document.getElementsByTagName('a');for(var i=0;i<a.length;i++){a[i].setAttribute('target','');}" completionHandler:nil];
+        }
         if (navigationAction.targetFrame == nil) {
             [self LC_loadRequest:readWriteRequest];
         }
+        
         decisionHandler(WKNavigationActionPolicyAllow);
     }else{
         decisionHandler(WKNavigationActionPolicyCancel);
